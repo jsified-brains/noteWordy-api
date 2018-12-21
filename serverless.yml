@@ -5,10 +5,50 @@ service:
 plugins:
   - serverless-webpack
 
+custom:
+  wordsTable: 'vocabWords-${opt:stage}'
+
 provider:
   name: aws
   runtime: nodejs8.10
   profile: serverless-aws-admin
+  region: us-east-1
+
+# iamRoleStatements to set the permissions for Lambda to access DynamoDB.
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - dynamodb:Update
+      Resource: "arn:aws:dynamodb:us-east-1:*:*"
+  environment:
+    WORDS_TABLE: ${self:custom.wordsTable}
+  
+resources:
+  Resources:
+    WordsDynamoDBTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: ${self:custom.wordsTable}
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: wordId 
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+          - AttributeName: wordId
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
 
 functions:
   hello:
