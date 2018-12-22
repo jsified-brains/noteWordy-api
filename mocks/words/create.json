@@ -1,0 +1,8 @@
+{
+   "body": "{ \"word\": \"stranger\", \"meaning\": \"someone whom you don't know or who doesn't belong in a specific place\", \"example\": \"Don't talk to strangers.\", \"comments\": \"sometimes things could be stranger than fiction\" }",
+   "requestContext": {
+      "identity": {
+         "cognitoIdentityId": "TEST-LOCAL-USER-A"
+      }
+   }
+}

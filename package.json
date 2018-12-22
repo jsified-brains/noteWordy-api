@@ -7,8 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "devDeploy": "serverless deploy --stage dev --region us-east-1",
     "prodDeploy": "serverless deploy --stage prod --region us-east-1"
- },
-  "dependencies": {},
+  },
+  "dependencies": {
+    "aws-sdk": "^2.382.0",
+    "body-parser": "^1.18.3",
+    "uuid": "^3.3.2"
+  },
   "devDependencies": {
     "@types/aws-lambda": "8.10.1",
     "@types/node": "^8.0.57",

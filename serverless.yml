@@ -51,6 +51,14 @@ resources:
           WriteCapacityUnits: 5
 
 functions:
+  createWord:
+    handler: src/modules/words/create.main
+    events:
+      - http:
+          path: words
+          method: post
+          cors: true
+          authorizer: aws_iam
   hello:
     handler: handler.hello
     events:
