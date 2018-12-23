@@ -59,6 +59,14 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  getLoggedUserWords:
+    handler: src/modules/words/getByUser.main
+    events:
+      - http:
+          path: words
+          method: get
+          cors: true
+          authorizer: aws_iam
   hello:
     handler: handler.hello
     events:
