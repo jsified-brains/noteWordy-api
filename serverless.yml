@@ -67,6 +67,14 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+  getWord:
+    handler: src/modules/words/getById.main
+    events:
+      - http:
+          path: words/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
   hello:
     handler: handler.hello
     events:
