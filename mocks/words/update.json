@@ -1,0 +1,11 @@
+{
+    "body": "{ \"word\": \"stranger-1\", \"meaning\": \"someone whom you don't know or who doesn't belong in a specific place\", \"example\": \"Don't talk to strangers.-1\" }",
+    "requestContext": {
+       "identity": {
+          "cognitoIdentityId": "TEST-LOCAL-USER-A"
+       }
+    },
+    "pathParameters": {
+        "id": "replace-this-with-the-id-of-an-item-you-have-in-your-dynamoDb-table"
+    }
+ }
