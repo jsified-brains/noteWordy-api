@@ -83,6 +83,14 @@ functions:
           method: put
           cors: true
           authorizer: aws_iam
+  deleteWord:
+    handler: src/modules/words/delete.main
+    events:
+      - http:
+          path: words/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
   hello:
     handler: handler.hello
     events:

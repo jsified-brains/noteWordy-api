@@ -1,0 +1,10 @@
+{
+    "pathParameters": {
+      "id": "replace-this-with-the-id-of-an-item-you-have-in-your-dynamoDb-table"
+    },
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "TEST-LOCAL-USER-A"
+      }
+    }
+}
